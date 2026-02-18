@@ -1,9 +1,9 @@
 @font-face {
     font-family: Lexend;
-    src: url(https://noragroup.github.io/font/Lexend-VariableFont_wght.ttf);
+    src: url(font/Lexend-VariableFont_wght.ttf);
 }
 
-.nav-bar{
+.nav-bar {
     position: fixed;
     right: 30px;
     bottom: 20px;
@@ -18,7 +18,7 @@
     transition: width 0.5s ease;
 }
 
-.nav-bar img{
+.nav-bar img {
     width: 60px;
     height: auto;
     flex-shrink: 0;
@@ -37,7 +37,7 @@
     margin-right: 15px;
 }
 
-.nav-bar .navinfo{
+.nav-bar .navinfo {
     white-space: nowrap;
     color: #000;
     font-family: Lexend;
@@ -47,11 +47,189 @@
     transition: opacity 0.3s ease, margin 0.3s ease;
 }
 
-.nav-bar:hover{
+.nav-bar:hover {
     width: 150px;
 }
 
-.nav-bar:hover .navinfo{
+.nav-bar:hover .navinfo {
     opacity: 1;
     margin-right: 10px;
+}
+
+.category-btn{
+    position: fixed;
+    left: 30px;
+    bottom: 20px;
+
+    width: 90px;
+    height: 80px;
+
+    font-family: 'Lexend', sans-serif;
+
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    overflow: hidden;
+    z-index: 9999;
+
+    box-shadow:
+        0 8px 30px rgba(0,0,0,0.25),
+        0 0 25px rgba(153, 0, 255, 0.15),
+        inset 0 1px 0 rgba(255,255,255,0.3);
+
+    transition:
+        width 0.45s ease,
+        height 0.45s ease,
+        top 0.45s ease,
+        border-radius 0.35s ease,
+        box-shadow 0.35s ease,
+        background 0.35s ease;
+}
+
+.category-btn::before{
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -75%;
+
+    width: 50%;
+    height: 200%;
+
+    background: linear-gradient(
+        120deg,
+        rgba(255,255,255,0) 0%,
+        rgba(255,255,255,0.4) 50%,
+        rgba(255,255,255,0) 100%
+    );
+
+    transform: rotate(25deg);
+    transition: 0.8s ease;
+    pointer-events: none;
+}
+
+.category-btn:hover::before{
+    left: 130%;
+}
+
+.category-header{
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.category-header img{
+    width: 60px;
+    height: auto;
+    flex-shrink: 0;
+}
+
+.category-header span{
+    color: white;
+    margin-left: 15px;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+
+.category-btn:hover{
+    width: 280px;
+
+    box-shadow:
+        0 10px 35px rgba(0,0,0,0.35),
+        0 0 35px rgba(153, 0, 255, 0.25),
+        inset 0 1px 0 rgba(255,255,255,0.35);
+}
+
+.category-btn:hover .category-header span{
+    opacity: 1;
+}
+
+.category-btn.active{
+    top: 20px;
+    bottom: 20px;
+    height: auto;
+
+    width: 320px;
+    border-radius: 25px;
+
+    background: rgba(255,255,255,0.18);
+
+    box-shadow:
+        15px 0 50px rgba(0,0,0,0.4),
+        0 0 45px rgba(153, 0, 255, 0.35),
+        inset 0 1px 0 rgba(255,255,255,0.4);
+}
+
+.category-sidebar{
+    opacity: 0;
+    padding: 20px;
+    margin-top: 10px;
+
+    transform: translateY(20px);
+
+    transition:
+        opacity 0.35s ease,
+        transform 0.4s ease;
+}
+
+.category-btn.active .category-sidebar{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.category-sidebar li{
+    list-style: none;
+    margin: 18px 0;
+    color: white;
+    cursor: pointer;
+
+    opacity: 0;
+    transform: translateX(-8px);
+
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
+}
+
+.category-sidebar li a{
+    color: #fff;
+}
+
+.category-sidebar li a:hover{
+    color: #949494;
+}
+
+.category-btn.active .category-sidebar li{
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.overlay{
+    position: fixed;
+    inset: 0;
+
+    background: rgba(0,0,0,0.35);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+
+    opacity: 0;
+    pointer-events: none;
+
+    transition: opacity 0.4s ease;
+
+    z-index: 9998;
+}
+
+.overlay.active{
+    opacity: 1;
+    pointer-events: auto;
 }
