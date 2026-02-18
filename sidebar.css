@@ -1,0 +1,57 @@
+@font-face {
+    font-family: Lexend;
+    src: url(font/Lexend-VariableFont_wght.ttf);
+}
+
+.nav-bar{
+    position: fixed;
+    right: 30px;
+    bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 10px 15px;
+    width: 60px;
+    overflow: hidden;
+    transition: width 0.5s ease;
+}
+
+.nav-bar img{
+    width: 60px;
+    height: auto;
+    flex-shrink: 0;
+}
+
+.nav-bar #SidebarBtnImgSelected {
+    display: none;
+}
+
+.nav-bar:hover {
+    width: 160px;
+}
+
+.nav-bar:hover .navinfo {
+    opacity: 1;
+    margin-right: 15px;
+}
+
+.nav-bar .navinfo{
+    white-space: nowrap;
+    color: #000;
+    font-family: Lexend;
+    font-size: 0.9em;
+    opacity: 0;
+    margin-right: 0;
+    transition: opacity 0.3s ease, margin 0.3s ease;
+}
+
+.nav-bar:hover{
+    width: 150px;
+}
+
+.nav-bar:hover .navinfo{
+    opacity: 1;
+    margin-right: 10px;
+}
