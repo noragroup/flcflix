@@ -7,6 +7,7 @@ class SearchBar extends HTMLElement {
                     <button class="input__button__shadow"><i class="fi fi-br-search"></i></button>
                     <input type="text" name="text" class="input__search" id="search-input" placeholder="Que recherchez-vous ?">
                 </div>
+                <div id="search-results"></div>
             </div>
         `;
     }
