@@ -1,0 +1,30 @@
+@property --angle {
+    syntax: "<angle>";
+    initial-value: 45deg;
+    inherits: false;
+}
+
+.movie iframe {
+    width: 800px;
+    height: 500px;
+    border: 5px solid transparent;
+    border-radius: 15px;
+
+    --angle: 45deg;
+
+    background:
+        linear-gradient(white, white) padding-box,
+        linear-gradient(var(--angle), #33ccff, #9900ff) border-box;
+
+    animation: rotateBorder 6s linear infinite;
+}
+
+@keyframes rotateBorder {
+    from {
+        --angle: 0deg;
+    }
+
+    to {
+        --angle: 360deg;
+    }
+}
