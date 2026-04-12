@@ -5,7 +5,7 @@ class MySidebarBtn extends HTMLElement {
         <div class="navinfo">
             <h1>Menu</h1>
         </div>
-        <img src="img/icons/white/unselected/Menu white unselected.png" id="SidebarBtnImg">
+        <img src="https://noragroup.github.io/flcflix/img/icons/menu-burger.png" id="SidebarBtnImg">
     </div>
     `;
   }
